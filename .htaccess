@@ -1,0 +1,6 @@
+SetEnv no-gzip dont-vary
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(index\.php)?$ https://%{HTTP_HOST} [L,R=301]
+</IfModule>
