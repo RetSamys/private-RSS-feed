@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
+<channel>
+  <title>THIS IS THE NAME OF YOUR PODCAST</title>
+  <link>http://THIS-IS-THE-ADDRESS-OF-YOUR-WEBSITE.com/</link>
+        <image>
+            <url>https://www.THIS-IS.com/THE-ADDRESS/OF-YOUR-LOGO.jpg</url>
+            <title>THIS IS THE NAME OF YOUR PODCAST</title>
+            <link>http://THIS-IS-THE-ADDRESS-OF-YOUR-WEBSITE.com/</link>
+        </image>
+  <description>THIS IS WHERE YOU DESCRIBE WHAT YOUR PODCAST IS ABOUT</description>
+        <language>en-us</language>
+        <copyright>TELL EVERYONE WHO'S MAKING THIS PODCAST</copyright>
+        <atom:link href="http://THIS-IS-THE-ADDRESS-OF-YOUR-WEBSITE.com/feed.php" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 06 Mar 2019 14:03:56 PST</lastBuildDate>
+        <itunes:author>TELL EVERYONE WHO'S MAKING THIS PODCAST</itunes:author>
+        <itunes:summary>THIS IS WHERE YOU DESCRIBE WHAT YOUR PODCAST IS ABOUT
+        </itunes:summary>
+        <itunes:subtitle>ADD A TAGLINE FOR YOUR PODCAST HERE</itunes:subtitle>
+        <itunes:owner>
+            <itunes:name>TELL EVERYONE WHO'S MAKING THIS PODCAST</itunes:name>
+            <itunes:email>YOUR-EMAIL@GOES-HERE.com</itunes:email>
+        </itunes:owner>
+        <itunes:explicit>No</itunes:explicit>
+        <itunes:keywords>
+YOUR-FIRST-KEYWORD, YOUR-SECOND-KEYWORD, YOUR-THIRD-KEYWORD
+        </itunes:keywords>
+<itunes:image href="https://www.THIS-IS.com/THE-ADDRESS/OF-YOUR-LOGO.jpg"/>  
+        <rawvoice:rating>TV-G</rawvoice:rating>
+        <rawvoice:location>WHERE ARE YOU FROM</rawvoice:location>
+        <rawvoice:frequency>Irregularly</rawvoice:frequency>
+        <itunes:category text="PICK AN ITUNES CATEGORY">
+            <itunes:category text="PICK AN ITUNES SUBCATEGORY"/>
+        </itunes:category>
+        <pubDate>Wed, 06 Mar 2019 14:03:56 PST</pubDate>
+		</channel>
+</rss>
