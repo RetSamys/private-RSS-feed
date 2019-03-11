@@ -10,6 +10,7 @@ Before you can use these files, you'll want to change a couple of things:
 * After you saved protected/feed.rss, I recommend saving a copy under protexted/audio just in case you have to re-do the feed
 * The directory "achilles" is where admins can easily add new episodes, update the list of users and generate RSS links, so make sure you pick a new password in achilles/.htpasswd (if this is your first time working with .htpasswd, I recommend looking up a htpasswd generator online). Don't forget to put in the absolute path to achilles/.htpasswd in achilles/.htaccess
 * There is a default title and a default description in achilles/upload.php if you want to change that
+* This all currently assumes that the files are loaded into the web root for the given domain or subdomain. If you save it in a different directory, change the paths
 
 ## Features
 * Users in the user list can request an automatically sent email to receive a link to the RSS feed.
