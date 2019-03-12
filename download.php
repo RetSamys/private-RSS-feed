@@ -6,10 +6,10 @@ $isSubbed=false;
 $isActive=false;
 
 foreach($csv as $subber){
-if (hash_hmac('sha256', $subber[1], "YOURSECRETGOESHERE")==$id){
+if (hash_hmac('sha256', strtolower($subber[1]), "YOURSECRETGOESHERE")==$id){
 //checks if ID from URL is the same as the email field in the CSV
 $isSubbed=true;
-if ($subber[0]=="Active"){
+if (strtolower($subber[0])=="active"){
 //checks if the email in the CSV has the "status" field set as "Active"
 $isActive=true;
 break;
