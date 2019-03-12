@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if(isset($_POST['submit'])){
-	$to = $_POST['email']; // this is the sender's Email address
+	$to = strtolower($_POST['email']); // this is the sender's Email address
 	$csv = array_map('str_getcsv', file($_SERVER["DOCUMENT_ROOT"]."/protected/users.csv")); //this is where the CSV is saved relatively to the domain; this makes the CSV an array for easier parsing
 	$isSubbed=false;
 	$isActive=false;
@@ -11,10 +11,10 @@ if(isset($_POST['submit'])){
 	
 	foreach($csv as $subber){
 		
-		if ($subber[1]==$to){
+		if (strtolower($subber[1])==$to){
 			//checks if ID from URL is the same as the email field in the CSV
 			$isSubbed=true;
-			if ($subber[0]=="Active"){
+			if (strtolower($subber[0])=="active"){
 				//checks if the email in the CSV has the "status" field set as "Active"
 				$isActive=true;
 			}
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 	if ($isSubbed){
 		if ($isActive){
 			//sends mail with link to RSS feed if everything checks out
-			$feed=$_SERVER["HTTP_REFERER"]."/feed.php?id=".hash_hmac('sha256', $to, "YOURSECRETGOESHERE"); //"YOURSECRETGOESHERE" should be replaced with randomly generated data, 128 bits should be fine (16 bytes)
+			$feed=$_SERVER["HTTP_REFERER"]."/feed.php?id=".hash_hmac('sha256', strtolower($to), "YOURSECRETGOESHERE"); //"YOURSECRETGOESHERE" should be replaced with randomly generated data, 128 bits should be fine (16 bytes)
 		    $from = "noreply@".$_SERVER["SERVER_NAME"]; // this is your Email address
 			$subject = "Private Podcast Feed";
 			$message_html = "<html>
