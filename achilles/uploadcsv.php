@@ -16,6 +16,32 @@ if($FileType != "csv") {
     echo "Sorry, only CSV files are allowed.";
     $uploadOk = 0;
 }
+
+$mailsExists=false;
+$statusExists=false;
+$csv = array_map('str_getcsv', file($_FILES["fileToUpload"]["tmp_name"])); //this makes the CSV an array for easier parsing
+foreach($csv as $subber){
+	if (strtolower($subber[0])=="active"){
+		$statusExists=true;
+		break;
+	}
+}
+foreach($csv as $subber){
+	if (strpos($subber[1], '@') !== false){
+		$mailsExists=true;
+		break;
+	}
+}
+
+if ($mailsExists==false){
+	echo "Sorry, no emails in the 2nd column found.";
+	$uploadOk = 0;
+}
+if ($statusExists==false){
+	echo "Sorry, first column has no entries with status 'Active'.";
+	$uploadOk = 0;
+}
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
